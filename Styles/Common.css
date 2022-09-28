@@ -1,0 +1,9 @@
+@font-face {
+    font-family: myGangstaFont;
+    src: url(../Fonts/Gangsters-LL0W.ttf);
+}
+
+body {
+    font-family: myGangstaFont;
+    color:black;
+}

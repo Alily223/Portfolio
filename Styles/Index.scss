@@ -1,0 +1,465 @@
+// Header
+$MSUGreen: #2d453a; 
+// Center colorgradient One
+$RichBlackFOGRA: #0d181a;
+// Center colorgradient Two
+$PineTree: #26362D;
+// Background For Boxes
+$RichBlackFOGRAThirty: #040404;
+// Text-Color
+$Artichoke:#928E61;
+// Text-Size One
+$unNaturaltext-size: 1.5em;
+// Text-Size Two
+$naturaltext-size: 1.2em;
+//Text-spacing
+$SpaceText: 5px;
+
+//Custom-Scroll-Bar
+
+::-webkit-scrollbar {
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #2d453a;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #928E61;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #78744e;
+}
+
+//Custom-Scroll-Bar
+
+
+// Mix-ins start
+
+@mixin Header-background-color {
+    background-color: $MSUGreen;
+}
+
+@mixin linearGradient {
+    background: linear-gradient(10deg, $RichBlackFOGRA 50% 50%, $PineTree 80% 100%);
+}
+
+@mixin linearGradientOpposite {
+    background: linear-gradient(10deg, $PineTree 20% 20%,$RichBlackFOGRA 40% 40%);
+}
+
+@mixin Textcolor {
+    color: $Artichoke; 
+}
+
+@mixin backgroundforboxes {
+    background-color: $RichBlackFOGRAThirty;
+}
+
+@mixin unNaturaltextsizing {
+    font-size: $unNaturaltext-size;
+    letter-spacing: $SpaceText;
+}
+
+@mixin inside-inline-block-flex-01 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin logo-container {
+    display: block;
+    block-size: 100px;
+    border: 2px solid $Artichoke;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+@mixin logo-container-img {
+    position: relative;
+    top: -20px;
+}
+
+@mixin Nav-Bar {
+    display: Flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: $Artichoke;
+    font-size: 1.5em;
+}
+
+//Mix-ins End
+
+
+
+html , body {
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth
+}
+
+
+//Header Start
+
+.Header-Portfolio {
+    @include Header-background-color();
+    margin:0px;
+    padding:0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height:100px;
+    width:100%;
+}
+
+.Header-Portfolio {
+    .Middle-Nav-Bar {
+        @include Nav-Bar();
+    }
+}
+
+.Header-Portfolio {
+    .Middle-Nav-Bar {
+        .M-N-B a{
+            text-decoration: none;
+            color: $Artichoke;
+            padding-left: 20px;
+            padding-right: 20px;
+            scroll-behavior: smooth;
+            transition: 1s;
+        }
+    }
+}
+
+.Header-Portfolio {
+    .Middle-Nav-Bar {
+        .M-N-B a:hover{
+            color:white;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.Header-Portfolio {
+    .Middle-Nav-Bar{
+        .M-N-B button{
+            height:40px;
+            width: 40px;
+            background-color: #0d181a;
+            cursor: pointer;
+            color: #928E61;
+        }
+    }
+}
+//Header End
+
+
+//Skills Start
+
+.My-Skills-Section {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height:500px;
+    width:100%;
+    @include linearGradient();
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+}
+
+.My-Skills-Section {
+    .Details-About-Me {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-content: center;
+        border: 2px solid $Artichoke;
+        text-align: center;
+        color: $Artichoke;
+        font-size: $unNaturaltext-size*2;
+        overflow-y: auto;
+        overscroll-behavior-inline: contain;
+        height: 500px;
+        width: 800px;
+        scroll-behavior: smooth;
+    }
+}
+
+.My-Skills-Section {
+    .Details-About-Me {
+        .My-Coding-Skills{
+            display: inline-table;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            justify-content: center;
+            border: 1px solid $Artichoke;
+            color: $Artichoke;
+            font-size: calc($naturaltext-size/3);
+        }
+    }
+}
+
+.My-Skills-Section{
+    .Details-About-Me{
+        .My-Coding-Skills {
+            .Learned-Code{
+                .Code-Logos-and-name{
+                    @include inside-inline-block-flex-01
+                }
+            }
+        }
+    }
+}
+
+.My-Skills-Section{
+    .Details-About-Me{
+        .My-Coding-Skills {
+            .Learned-Code{
+                .Code-Logos-and-name{
+                    .Logo {
+                        @include logo-container
+                    }
+                }
+            }
+        }
+    }
+}
+
+.My-Skills-Section{
+    .Details-About-Me{
+        .My-Coding-Skills {
+            .Learned-Code{
+                .Code-Logos-and-name{
+                    .Logo img{
+                        @include logo-container-img
+                    }
+                }
+            }
+        }
+    }
+}
+
+.My-Skills-Section{
+    .Details-About-Me{
+        .My-Coding-Skills {
+            .Code-Currently-Learning{
+                .Code-Logos-and-name{
+                    @include inside-inline-block-flex-01
+                }
+            }
+        }
+    }
+}
+
+.My-Skills-Section{
+    .Details-About-Me{
+        .My-Coding-Skills {
+            .Code-Currently-Learning{
+                .Code-Logos-and-name{
+                    .Logo {
+                        @include logo-container
+                    }
+                }
+            }
+        }
+    }
+}
+
+.My-Skills-Section{
+    .Details-About-Me{
+        .My-Coding-Skills {
+            .Code-Currently-Learning{
+                .Code-Logos-and-name{
+                    .Logo img{
+                        @include logo-container-img
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Skills ends
+
+//Additional Information Start
+
+.Additional-Information {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height:500px;
+    width:100%;
+    @include linearGradientOpposite();
+    overflow-y: hidden;
+    color:$Artichoke;
+    letter-spacing: 1.5px;
+}
+
+.Additional-Information {
+    .current-school-of-attendance {
+        text-align: center;
+        border: 1px solid $Artichoke;
+    }
+}
+
+.Additional-Information {
+    .Additional-Information-MMNH{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        border: 1px solid $Artichoke;
+    }
+}
+
+.Additional-Information {
+    .Additional-Information-MMNH {
+        .Boxed-ADD-Info {
+            display:inline-table;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height:126px;
+            padding: 10px;
+            border:1px solid $Artichoke;
+        }
+    }
+}
+
+// Additional Information End
+
+//NBOP Starts
+
+.media-scroller{
+    @include linearGradient();
+    color: $Artichoke;
+    height: 340px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.media-scroller {
+    .header-wrapper-proj{
+        padding-top: 0%;
+        margin-top: -21px;
+        text-align: center;
+    }
+}
+
+.media-scroller {
+    .Nav-bar-of-projects {
+        display: grid;
+        gap:150px;
+        grid-auto-flow: column;
+        grid-auto-columns:25%;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        color: $Artichoke;
+    }
+}
+
+.media-scroller {
+    .Nav-bar-of-projects {
+        .NBOP-Material img {
+            height: 200px;
+            width: 450px;
+            object-fit: cover;
+        }
+    }
+}
+
+.media-scroller {
+    .Nav-bar-of-projects{
+        .NBOP-Material a{
+            text-decoration: none;
+            color: $Artichoke;
+        }
+    }
+}
+
+.media-scroller {
+    .Nav-bar-of-projects {
+        .NBOP-Material {
+            height:250px;
+            width: 450px;
+            padding: 10px;
+            background-color: $RichBlackFOGRAThirty;
+            transition: 1s;
+        }
+    }
+}
+
+.media-scroller {
+    .Nav-bar-of-projects {
+        .NBOP-Material p {
+            text-align: center;
+        }
+    }
+}
+
+.media-scroller {
+    .Nav-bar-of-projects {
+        .NBOP-Material:hover {
+            background-color: $PineTree;
+        }
+    }
+}
+
+// Media Scroller End
+
+//Footer Start
+
+.Footer {
+    @include Header-background-color();
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.Footer {
+    .Footer-Nav-Bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5em;
+    }
+}
+
+.Footer {
+    .Footer-Nav-Bar a{
+        text-decoration: none;
+        color: $Artichoke;
+        padding-left: 20px;
+        padding-right: 20px;
+        transition: 1s;
+    }
+}
+
+.Footer {
+    .Footer-Nav-Bar a:hover{
+        color: white;
+        letter-spacing: 1px;
+    }
+}
+
+.Footer {
+    .Copyright-Text {
+        color: $Artichoke;
+        font-size: 1.2em;
+    }
+}
